@@ -1,0 +1,6 @@
+{% load pwa %}
+{
+  {% for index, value in PWA_CONFIG %}
+    "{{ value.0 }}": {{ value.1|js}}{% if index != total_items %},{% endif %}
+  {% endfor %}
+}

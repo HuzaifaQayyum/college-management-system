@@ -1,0 +1,61 @@
+{% load static %}
+
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+{% if name %}
+    <meta name="application-name" content="{{ name }}">
+{% endif %}
+
+<!-- Chrome for Android theme color -->
+{% if theme_color %}
+    <meta name="theme-color" content="{{ theme_color }}">
+{% endif %}
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+{% if name %}
+    <meta name="apple-mobile-web-app-title" content="{{ name }}">
+{% endif %}
+{% if status_bar_color %}
+    <meta name="apple-mobile-web-app-status-bar-style" content="{{ status_bar_color }}">
+{% endif %}
+
+
+{% if icons_apple %}
+    {% for icon in icons_apple %}
+        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+    {% endfor %}
+{% elif icons %}
+    {% for icon in icons %}
+        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+    {% endfor %}
+{% endif %}
+
+{% if splash_screen %}
+    {% for splash in splash_screen %}
+        <link href="{{ splash.src }}" media="{{ splash.media }}" rel="apple-touch-startup-image"/>
+    {% endfor %}
+{% endif %}
+
+<!-- Tile for Win8 -->
+{% if background_color %}
+    <meta name="msapplication-TileColor" content="{{ background_color }}">
+{% endif %}
+
+{% if icons %}
+    {% with icons|last as icon %}
+    <meta name="msapplication-TileImage" content="{{ icon.src }}">
+    <link rel="icon" sizes="{{ icon.size }}" href="{{ icon.src }}"> 
+    {% endwith %}
+{% endif %}
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("{% url 'pwa:serviceworker' %}", {
+            scope: '/'
+        }).then(_ => {}).catch(e => {});
+    }
+</script>
+
+<link rel="manifest" href="{% url 'pwa:manifest' %}">
