@@ -1,0 +1,53 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load pwa %}
+
+{% block extrahead %}
+    {% progressive_web_app_meta %}
+    <link rel="stylesheet" href="{% static 'css/page_animations.css' %}">
+    <script>
+        window.onbeforeunload = () => { 
+            document.body.classList.add('reload');
+        }
+
+    </script>
+
+    <style>
+        .developed_by {
+            background: #444;
+            box-shadow: 0 0 4px 3px lightgrey;
+            padding: .4rem .3rem;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 0;
+            font-size: .8rem;
+            border-radius: 4px 4px 0 0;
+            user-select: none;
+        }
+
+        .image_preview { 
+            height: 150px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .admin-actions { 
+            display: flex;
+            align-items: center;
+        }
+
+        a.btn-action { 
+            padding: .4rem 1rem;
+        }
+
+        td, th { 
+            vertical-align: middle;
+        }
+    </style>
+{% endblock %}
+
+{% block footer %}
+    <h1 class="developed_by">Developed By: <strong>Huzaifa<strong></h1>
+{% endblock footer %}
