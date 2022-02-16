@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from .common import *
+from .pwa import *
 
 
 
@@ -32,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accounts',
+    'pwa',
     'core'
 ]
 
@@ -110,4 +112,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-STUDENT_MODEL = 'core.Student'
+AUTH_USER_MODEL = 'accounts.User'
