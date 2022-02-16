@@ -10,7 +10,7 @@ class CourseForm(forms.ModelForm):
 
     class Meta:
         model = Course
-        fields = [ 'name' ]
+        fields = [ 'name', 'subjects' ]
 
 
 class SubjectForm(forms.ModelForm):
@@ -21,4 +21,4 @@ class SubjectForm(forms.ModelForm):
 
     class Meta:
         model = Subject
-        fields = [ 'name', 'course' ]
+        fields = [ 'name' ]

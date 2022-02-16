@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!-- Add to homescreen for Chrome on Android -->
 <meta name="mobile-web-app-capable" content="yes">
 {% if name %}
@@ -50,6 +49,7 @@
     {% endwith %}
 {% endif %}
 
+{% if not SERVICE_WORKER_DISABLED %}
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register("{% url 'pwa:serviceworker' %}", {
@@ -57,5 +57,6 @@
         }).then(_ => {}).catch(e => {});
     }
 </script>
+{% endif %}
 
 <link rel="manifest" href="{% url 'pwa:manifest' %}">
