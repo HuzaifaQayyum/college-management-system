@@ -116,3 +116,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
 SUBJECT_MODEL = 'core.Subject'
+STUDENT_MODEL = 'core.Student'
+COURSE_SUBJECT_MODEL = 'core.CourseSubject'

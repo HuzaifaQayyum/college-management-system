@@ -21,6 +21,9 @@ class CourseSubject(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.course.name} - {self.subject.name}"
+
     class Meta:
         unique_together = [ 'subject', 'course' ]
 
