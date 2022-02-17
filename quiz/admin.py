@@ -8,7 +8,7 @@ from .forms import *
 class QuizResultAdmin(admin.ModelAdmin):
     list_display = ['student', 'gained_marks', 'total_marks', 'date']
     autocomplete_fields = ['student', 'course_subject']
-    search_fields = ['student__name', 'course_subject__course__name']
+    search_fields = ['student__name', 'course_subject__course__name__startswith']
     ordering = [ '-date']
     list_filter = ['course_subject']
     form = QuizResultForm
