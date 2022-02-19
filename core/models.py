@@ -29,10 +29,11 @@ class CourseSubject(models.Model):
 
 
 class Student(models.Model):
-    roll_no = models.IntegerField()
+    roll_no = models.IntegerField(unique=True)
     name = models.CharField(max_length=255)
-    phone_no = models.CharField(max_length=13)
+    phone_no = models.CharField(max_length=13, unique=True)
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
+    join_date = models.DateField(default=datetime.now)
 
     class Meta:
         unique_together = ['roll_no', 'course']

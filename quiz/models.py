@@ -1,3 +1,4 @@
+from this import d
 from django.db import models
 from django.conf import settings
 from datetime import datetime
@@ -9,3 +10,6 @@ class QuizResult(models.Model):
     total_marks         = models.IntegerField(default=30)
     gained_marks        = models.IntegerField()
     date                = models.DateField(default=datetime.now, blank=True)
+
+    def __str__(self):
+        return f'{self.student} - {self.course_subject}'

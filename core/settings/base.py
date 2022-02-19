@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from .common import *
 from .pwa import *
-
+from .constance import *
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'constance',
     'accounts',
     'pwa',
     'core',

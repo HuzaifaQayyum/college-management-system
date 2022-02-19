@@ -16,7 +16,7 @@ class CourseForm(forms.ModelForm):
 class SubjectForm(forms.ModelForm):
 
     def clean_name(self):
-        return self.cleaned_data['name'].upper()
+        return self.cleaned_data['name'].title()
 
     class Meta:
         model = Subject
@@ -26,7 +26,7 @@ class SubjectForm(forms.ModelForm):
 class StudentForm(forms.ModelForm):
 
     def clean_name(self):
-        return self.cleaned_data['name'].upper()
+        return self.cleaned_data['name'].title()
 
 
     def clean_phone_no(self):
@@ -37,4 +37,4 @@ class StudentForm(forms.ModelForm):
 
     class Meta:
         model = Student
-        fields = ['roll_no', 'name', 'phone_no', 'course']
+        fields = ['roll_no', 'name', 'phone_no', 'course', 'join_date']
