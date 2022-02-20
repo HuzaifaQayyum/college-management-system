@@ -5,7 +5,24 @@ SECRET_KEY = 'django-insecure-2=xr6=ilyoe*40s_gnnmi3zp!j@9teqmlwn9p5a6*1ozn3em47
 DEBUG = True
 
 ALLOWED_HOSTS = []
-INSTALLED_APPS += [ 'whitenoise.runserver_nostatic' ]
+INSTALLED_APPS = INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'constance',
+
+    'modeladmin_reorder',
+    'categories',
+    'library',
+    'accounts',
+    'pwa',
+    'core',
+    'quiz'
+]
 
 DATABASES = {
     'default': {

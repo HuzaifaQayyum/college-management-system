@@ -10,3 +10,32 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+INSTALLED_APPS = INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+    'constance',
+
+    'modeladmin_reorder',
+    'categories',
+    'library',
+    'accounts',
+    'pwa',
+    'core',
+    'quiz'
+]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ['CLOUDINARY_NAME'],
+    'API_KEY': os.environ['CLOUDINARY_API_KEY'],
+    'API_SECRET': os.environ['CLOUDINARY_API_SECRET'],
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

@@ -12,6 +12,7 @@ dj-database-url = "*"
 psycopg2 = "*"
 django-constance = {extras = ["database"], version = "*"}
 whitenoise = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 autopep8 = "*"
