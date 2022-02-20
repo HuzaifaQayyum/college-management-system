@@ -10,6 +10,7 @@ django-treebeard = "*"
 pillow = "*"
 dj-database-url = "*"
 psycopg2 = "*"
+django-constance = {extras = ["database"], version = "*"}
 
 [dev-packages]
 autopep8 = "*"
