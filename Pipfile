@@ -9,6 +9,7 @@ gunicorn = "*"
 django-treebeard = "*"
 pillow = "*"
 django-modeladmin-reorder = "*"
+dj-database-url = "*"
 
 [dev-packages]
 autopep8 = "*"
