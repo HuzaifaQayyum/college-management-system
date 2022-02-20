@@ -1,2 +1,2 @@
-web: python manage.py collectstatic && gunicorn core.wsgi
+web: gunicorn core.wsgi
 release: python manage.py migrate
