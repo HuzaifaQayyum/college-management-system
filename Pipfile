@@ -8,8 +8,8 @@ django = "*"
 gunicorn = "*"
 django-treebeard = "*"
 pillow = "*"
-django-modeladmin-reorder = "*"
 dj-database-url = "*"
+psycopg2 = "*"
 
 [dev-packages]
 autopep8 = "*"
