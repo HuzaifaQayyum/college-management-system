@@ -11,7 +11,7 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
-INSTALLED_APPS = INSTALLED_APPS = [
+INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
