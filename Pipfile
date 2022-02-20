@@ -11,6 +11,7 @@ pillow = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 django-constance = {extras = ["database"], version = "*"}
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
