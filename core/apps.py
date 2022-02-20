@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
-
-class QuizConfig(AppConfig):
+class CoreConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'quiz'
-    icon_name = 'question_answer'
+    name = 'core'
+    icon_name = 'developer_board'

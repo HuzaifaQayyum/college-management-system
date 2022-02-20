@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 gunicorn = "*"
+django-treebeard = "*"
+pillow = "*"
+django-modeladmin-reorder = "*"
 
 [dev-packages]
 autopep8 = "*"

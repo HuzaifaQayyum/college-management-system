@@ -5,6 +5,7 @@ SECRET_KEY = 'django-insecure-2=xr6=ilyoe*40s_gnnmi3zp!j@9teqmlwn9p5a6*1ozn3em47
 DEBUG = True
 
 ALLOWED_HOSTS = []
+INSTALLED_APPS += [ 'whitenoise.runserver_nostatic' ]
 
 DATABASES = {
     'default': {

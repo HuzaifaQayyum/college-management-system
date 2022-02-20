@@ -13,10 +13,10 @@
     </script>
 
     <style>
+
         .developed_by {
-            background: #444;
-            box-shadow: 0 0 4px 3px lightgrey;
-            padding: .4rem .3rem;
+            background-color: gray;
+            padding: .5rem .3rem;
             color: #fff;
             position: fixed;
             bottom: 0;
@@ -24,7 +24,6 @@
             margin: 0;
             font-size: .8rem;
             border-radius: 4px 4px 0 0;
-            user-select: none;
         }
 
         .image_preview { 
@@ -45,6 +44,38 @@
         td, th { 
             vertical-align: middle;
         }
+
+        #nav-sidebar > .module { 
+            margin-bottom: 10px;
+        }
+
+        #changelist td { 
+            padding-top: .8rem ;
+            padding-bottom: .8rem ;
+        }
+
+        #changelist table thead th  { 
+            background-color: var(--primary);
+            transition: background-color .2s ease-out;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+
+        #changelist thead th.sortable:hover,
+        #changelist thead th.sortable a:focus,
+        #changelist thead th.sortable .text a:hover { 
+            background-color: var(--secondary) !important; 
+        }
+        
+        #changelist thead th a,
+        #changelist thead th {
+            color: #fff;
+        }
+
+        #changelist .results { 
+            border-radius: 5px;
+        }
+
     </style>
 {% endblock %}
 

@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class AccountsConfig(AppConfig):
+class CategoriesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'accounts'
-    icon_name = 'supervisor_account'
+    name = 'categories'
+    icon_name = 'view_quilt'
