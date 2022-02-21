@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.views.generic import RedirectView
 from django.conf import settings
 
+admin.site.site_header = 'College Management System'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pwa.urls')),

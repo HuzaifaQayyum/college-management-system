@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.db.models.functions import Cast
-from quiz import models as quiz_models, admin as quiz_admin
 from library import models as library_model, admin as library_admin
-from utils.admin import search_by_date, search_by_int
 from .models import *
 from .forms import *
 
@@ -40,11 +38,6 @@ class StudentAdmin(admin.ModelAdmin):
         return super().get_queryset(request).annotate(overall_average=overall_average, lastmonth_average=lastmonth_average)
 
 
-    def get_search_results(self, request, queryset, search_term):
-        queryset = search_by_int(queryset, search_term, lambda int_term: { 'roll_no__exact': int_term })
-        queryset, use_distinct =  super().get_search_results(request, queryset, search_term)
-        return queryset, use_distinct
-
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
@@ -76,38 +69,9 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
-admin.site.site_header = 'College Management System'
+class BorrowAdminWithSearch(library_admin.BorrowAdmin):
+    search_fields = [ 'book__title', 'book__isbn', 'reader__roll_no'  ]
 
 
-# class QuizResultAdminWithSearch(quiz_admin.QuizResultAdmin):
-
-#     def get_search_results(self, request, queryset, search_term):
-#         queryset, use_distinct = super().get_search_results(request, queryset, search_term)
-#         queryset = search_by_int(queryset, search_term, lambda int_term: {
-#                                  'student__roll_no__exact': int_term})
-#         queryset = search_by_date(queryset, search_term, lambda date_term: { 'date__month': date_term.month, 'date__year': date_term.year })
-#         return queryset, use_distinct
-
-
-# class LibraryAdminWithSearch(library_admin.BookAdmin):
-#     def get_search_results(self, request, queryset, search_term):
-#         queryset, use_distinct  = super().get_search_results(request, queryset, search_term)
-#         queryset                = search_by_int(queryset, search_term, lambda int_term: { 'isbn__startswith': int_term })
-#         return queryset, use_distinct
-
-# class BorrowAdminWithSearch(library_admin.BorrowAdmin):
-
-#      def get_search_results(self, request, queryset, search_term):
-#         queryset, use_distinct  = super().get_search_results(request, queryset, search_term)
-#         queryset                = search_by_int(queryset, search_term, lambda int_term: {'student__roll_no': int_term })
-#         return queryset, use_distinct
-
-
-# admin.site.unregister(quiz_models.QuizResult)
-# admin.site.register(quiz_models.QuizResult, QuizResultAdminWithSearch)
-
-# admin.site.unregister(library_model.Book)
-# admin.site.register(library_model.Book, LibraryAdminWithSearch)
-
-# admin.site.unregister(library_model.Borrow)
-# admin.site.register(library_model.Borrow, BorrowAdminWithSearch)
+admin.site.unregister(library_model.Borrow)
+admin.site.register(library_model.Borrow, BorrowAdminWithSearch)

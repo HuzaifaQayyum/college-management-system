@@ -17,7 +17,7 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ['title', 'book_preview', 'category',  'stock', 'is_available' ]
-    search_fields =  [ 'title__istartswith', 'author__name__istartswith' ]
+    search_fields =  [ 'title__istartswith', 'author__name__istartswith', 'isbn__startswith' ]
     autocomplete_fields = [ 'category', 'author' ]
     form = BookForm
         
@@ -39,7 +39,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(Borrow)
 class BorrowAdmin(admin.ModelAdmin):
     list_display = [ 'book', 'reader', 'expiry', 'do_fine', 'admin_actions']
-    search_fields = [ 'book__title', 'book__isbn', 'reader__name__istartswith' ]
+    search_fields = [ 'book__title', 'book__isbn'  ]
     autocomplete_fields = [ 'reader', 'book' ]
     form = BorrowForm
     actions  = None
