@@ -4,15 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==3.2"
 gunicorn = "*"
 django-treebeard = "*"
 pillow = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 django-constance = {extras = ["database"], version = "*"}
-whitenoise = "*"
 django-cloudinary-storage = "*"
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
