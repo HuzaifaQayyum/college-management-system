@@ -10,7 +10,7 @@ class Subject(models.Model):
 
 
 class Course(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField("course title", max_length=255, unique=True)
     subjects = models.ManyToManyField(Subject, related_name='courses', through='CourseSubject')
 
     def __str__(self):

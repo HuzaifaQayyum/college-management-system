@@ -12,9 +12,9 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = ['roll_no', 'name', 'course',
                     'last_month_average', 'overall_average']
     list_display_links = ['roll_no', 'name']
-    list_filter = [ 'course', 'join_date']
+    list_filter = [ 'course__name', 'join_date']
     autocomplete_fields = ['course']
-    search_fields = ['name__istartswith']
+    search_fields = ['name__istartswith', 'roll_no__exact']
     ordering = ['roll_no']
     form = StudentForm
 
