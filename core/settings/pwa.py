@@ -1,5 +1,5 @@
 PWA_CONFIG = {
-    'SERVICE_WORKER_DISABLED': True,
+    'SERVICE_WORKER_DISABLED': False,
     "name": "College Management System",
     "short_name": "CMS",
     "description": "College management system to manage students performance and library management.",

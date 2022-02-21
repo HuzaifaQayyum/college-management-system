@@ -37,5 +37,5 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ['CLOUDINARY_API_SECRET'],
 }
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
