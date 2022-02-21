@@ -31,6 +31,19 @@ INSTALLED_APPS = [
     'quiz'
 ]
 
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'modeladmin_reorder.middleware.ModelAdminReorder',
+]
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ['CLOUDINARY_NAME'],
     'API_KEY': os.environ['CLOUDINARY_API_KEY'],

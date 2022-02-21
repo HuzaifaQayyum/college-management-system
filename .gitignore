@@ -8,6 +8,7 @@ media
 staticfiles
 .vscode
 script.sh
+script*.sh
 # Backup files # 
 *.bak 
 

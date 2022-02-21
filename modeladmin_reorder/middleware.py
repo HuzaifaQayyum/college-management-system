@@ -154,5 +154,8 @@ class ModelAdminReorder:
         self.init_config(request, app_list)
         ordered_app_list = self.get_app_list()
         response.context_data['available_apps'] = ordered_app_list
+        if response.context_data.get('app_list', None):
+            response.context_data['app_list'] = ordered_app_list
+
         return response
 
