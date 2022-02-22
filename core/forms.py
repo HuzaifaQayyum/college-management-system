@@ -25,6 +25,13 @@ class SubjectForm(forms.ModelForm):
 
 class StudentForm(forms.ModelForm):
 
+    def clean_roll_no(self):
+        roll_no = self.cleaned_data.get('roll_no', '')
+        if not re.match('^[0-9]+$', roll_no):
+            raise forms.ValidationError("Roll no must only contain digits 0-9.")
+        return roll_no
+
+
     def clean_name(self):
         return self.cleaned_data['name'].title()
 

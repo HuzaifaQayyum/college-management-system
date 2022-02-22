@@ -23,17 +23,17 @@
 
 {% if icons_apple %}
     {% for icon in icons_apple %}
-        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+        <link rel="apple-touch-icon" href="{% static icon.src %}" sizes="{{ icon.size }}">
     {% endfor %}
 {% elif icons %}
     {% for icon in icons %}
-        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+        <link rel="apple-touch-icon" href="{% static icon.src %}" sizes="{{ icon.size }}">
     {% endfor %}
 {% endif %}
 
 {% if splash_screen %}
     {% for splash in splash_screen %}
-        <link href="{{ splash.src }}" media="{{ splash.media }}" rel="apple-touch-startup-image"/>
+        <link href="{% static splash.src %}" media="{{ splash.media }}" rel="apple-touch-startup-image"/>
     {% endfor %}
 {% endif %}
 
@@ -45,7 +45,7 @@
 {% if icons %}
     {% with icons|last as icon %}
     <meta name="msapplication-TileImage" content="{{ icon.src }}">
-    <link rel="icon" sizes="{{ icon.size }}" href="{{ icon.src }}"> 
+    <link rel="icon" sizes="{{ icon.size }}" href="{% static icon.src %}"> 
     {% endwith %}
 {% endif %}
 
@@ -58,5 +58,13 @@
     }
 </script>
 {% endif %}
+{% if not PAGE_ANIMATION_DISABLED %}
+<link rel="stylesheet" href="{% static static 'css/page_animations.css' %}">
+<script>
+    window.onbeforeunload = () => { 
+        document.body.classList.add('reload');
+    }
+</script>
+{% endif %}
 
-<link rel="manifest" href="{% url 'pwa:manifest' %}">
+<link rel="manifest" href="{% static url 'pwa:manifest' %}">

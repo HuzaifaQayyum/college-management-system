@@ -1,6 +1,19 @@
-{% load pwa %}
+{% load pwa static %}
 {
-  {% for index, value in PWA_CONFIG %}
-    "{{ value.0 }}": {{ value.1|js}}{% if index != total_items %},{% endif %}
+  {% for value in PWA_CONFIG %}
+   {% if value.0 == "icons" or value.0 == "apple-icons"%}
+        "{{ value.0 }}": [
+            {% for icon in value.1 %}
+                {
+                    "src": "{% static icon.src %}",
+                    "sizes": "{{ icon.sizes }}",
+                    "type": "{{ icon.type }}"
+                } {% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]
+   {% else %}
+        "{{ value.0 }}": "{{ value.1 }}"
+   {% endif %}
+   {% if not forloop.last%},{% endif %}
   {% endfor %}
 }

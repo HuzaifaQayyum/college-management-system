@@ -16,6 +16,7 @@ class StudentAdmin(admin.ModelAdmin):
     ordering = ['roll_no']
     form = StudentForm
 
+
     def overall_average(self, student):
         return (student.overall_average is not None) and f'{student.overall_average}%' or '-'
 
@@ -70,7 +71,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 class BorrowAdminWithSearch(library_admin.BorrowAdmin):
-    search_fields = [ 'book__title', 'book__isbn', 'reader__roll_no'  ]
+    search_fields = [ 'book__title', 'book__isbn', 'reader__roll_no__exact'  ]
 
 
 admin.site.unregister(library_model.Borrow)

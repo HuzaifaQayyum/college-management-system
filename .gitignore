@@ -9,6 +9,10 @@ staticfiles
 .vscode
 script.sh
 script*.sh
+
+# Desktop version
+desktop/dist
+desktop/node_modules
 # Backup files # 
 *.bak 
 

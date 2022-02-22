@@ -17,10 +17,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'cloudinary_storage',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'constance',
+    'constance.backends.database',
 
     'modeladmin_reorder',
     'categories',
@@ -34,7 +35,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,5 +50,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ['CLOUDINARY_API_SECRET'],
 }
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'

@@ -4,13 +4,6 @@
 
 {% block extrahead %}
     {% progressive_web_app_meta %}
-    <link rel="stylesheet" href="{% static 'css/page_animations.css' %}">
-    <script>
-        window.onbeforeunload = () => { 
-            document.body.classList.add('reload');
-        }
-
-    </script>
 
     <style>
 

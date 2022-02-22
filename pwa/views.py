@@ -10,9 +10,9 @@ def service_worker(request, *args, **kwargs):
                  content_type="application/javascript")
 
 def manifest(request):
-    PWA_CONFIG = list(settings.PWA_CONFIG.items())
+    PWA_CONFIG = (settings.PWA_CONFIG.items())
     
-    return render(request, 'pwa/manifest.webmanifest', { 'PWA_CONFIG': enumerate(PWA_CONFIG), 'total_items': len(PWA_CONFIG) - 1 }, 
+    return render(request, 'pwa/manifest.webmanifest', { 'PWA_CONFIG': PWA_CONFIG, 'total_items': len(PWA_CONFIG) - 1 }, 
                   content_type='application/manifest+json')
     
 def offline(request):

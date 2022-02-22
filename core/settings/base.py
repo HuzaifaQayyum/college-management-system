@@ -88,7 +88,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ BASE_DIR / 'frontend/assets' ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/files/'
 

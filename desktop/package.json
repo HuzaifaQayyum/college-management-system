@@ -1,0 +1,24 @@
+{
+  "name": "college-management-system",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13",
+    "electron-packager": "^15.4.0"
+  },
+  "author": "Huzaifa",
+  "description": "College management system that allows management of library, students and quizes.",
+  "main": "main.js",
+  "build": {
+    "appId": "com.leoqa.college-management-system",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  }
+}
