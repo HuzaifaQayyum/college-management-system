@@ -38,6 +38,7 @@ MIDDLEWARE = [
     'modeladmin_reorder.middleware.ModelAdminReorder',
 ]
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
