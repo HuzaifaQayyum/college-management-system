@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
     'debug_toolbar',
+    'django_media_fixtures',
 
     'modeladmin_reorder',
     'categories',

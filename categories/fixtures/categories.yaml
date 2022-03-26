@@ -1,0 +1,35 @@
+- model: categories.category
+  fields:
+    lft: 1
+    rgt: 6
+    tree_id: 3
+    depth: 1
+    name: Programming
+- model: categories.category
+  fields:
+    lft: 1
+    rgt: 2
+    tree_id: 2
+    depth: 1
+    name: History
+- model: categories.category
+  fields:
+    lft: 1
+    rgt: 2
+    tree_id: 1
+    depth: 1
+    name: Education
+- model: categories.category
+  fields:
+    lft: 2
+    rgt: 3
+    tree_id: 3
+    depth: 2
+    name: C++
+- model: categories.category
+  fields:
+    lft: 4
+    rgt: 5
+    tree_id: 3
+    depth: 2
+    name: Python

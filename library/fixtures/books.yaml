@@ -1,0 +1,15 @@
+---
+- model: library.book
+  fields:
+    isbn: '1234567812343'
+    category:
+    - C++
+    - 2
+    name: C++ Complete Guide For Beginners
+    preview: images/books/book.jpg
+    stock: 3
+    assigned: 0
+    author:
+    - - Mosh Hameedani
+
+    

@@ -1,0 +1,10 @@
+---
+
+- model: core.Student
+  fields:
+    roll_no: 1
+    name: John Smith
+    phone_no: 03008342563
+    course:
+      - ICS part 1
+    join_date: 2022-12-02

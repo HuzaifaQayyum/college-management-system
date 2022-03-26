@@ -3,6 +3,9 @@ from django.contrib.auth.models import BaseUserManager
 
 class UserManager(BaseUserManager):
     
+    def get_by_natural_key(self, email):
+        return self.get(email=email)
+
     def create_user(self, full_name, email, password=None, **kwargs):
         user = self.model(full_name=full_name, email=email, **kwargs)
         if password:

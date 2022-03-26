@@ -1,0 +1,8 @@
+- model: library.author
+  fields:
+    name: Mosh Hameedani
+
+
+- model: library.author
+  fields:
+    name: Robert C Martin

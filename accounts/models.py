@@ -27,6 +27,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['full_name']
     objects = UserManager()
 
+    def natural_key(self):
+        return [ self.email ]
+
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')

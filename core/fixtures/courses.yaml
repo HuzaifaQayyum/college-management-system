@@ -1,0 +1,14 @@
+---
+
+- model: core.Course
+  fields:
+    name: ICS part 1
+    subjects:
+      - 
+        - English
+      - 
+        - Math
+      - 
+        - Pak studies
+
+

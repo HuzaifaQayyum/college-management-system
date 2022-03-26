@@ -16,6 +16,8 @@ django-cloudinary-storage = "*"
 [dev-packages]
 autopep8 = "*"
 django-debug-toolbar = "*"
+pyyaml = "*"
+django-media-fixtures = "==1.0.0"
 
 [requires]
 python_version = "3.8"
