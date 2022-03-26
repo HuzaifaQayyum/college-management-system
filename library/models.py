@@ -1,24 +1,28 @@
 from django.db import models
 from django.conf import settings
 
+from .managers import AuthorManager
+
 
 class Author(models.Model):
     name = models.CharField(max_length=255, unique=True)
     
+    objects = AuthorManager()
+
     def __str__(self) -> str:
         return self.name
 
 class Book(models.Model):
     isbn            = models.CharField(max_length=13, unique=True)
     category        = models.ForeignKey(settings.CATEGORY_MODEL, on_delete=models.PROTECT)
-    title           = models.CharField(max_length=200, db_index=True)
+    name           = models.CharField(max_length=200, db_index=True)
     preview         = models.ImageField(upload_to='books/')
     author          = models.ManyToManyField(Author, db_index=True)
     stock           = models.PositiveIntegerField(default=0)
     assigned        = models.PositiveIntegerField(default=0, editable=False)
     
     def __str__(self) -> str:
-        return self.title
+        return self.name
 
 
 class Borrow(models.Model):

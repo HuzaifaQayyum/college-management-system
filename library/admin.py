@@ -16,8 +16,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title', 'book_preview', 'category',  'stock', 'is_available' ]
-    search_fields =  [ 'title__istartswith', 'author__name__istartswith', 'isbn__startswith' ]
+    list_display = ['name', 'book_preview', 'category',  'stock', 'is_available' ]
+    search_fields =  [ 'name__istartswith', 'author__name__istartswith', 'isbn__startswith' ]
     autocomplete_fields = [ 'category', 'author' ]
     form = BookForm
         
@@ -39,7 +39,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(Borrow)
 class BorrowAdmin(admin.ModelAdmin):
     list_display = [ 'book', 'reader', 'expiry', 'do_fine', 'admin_actions']
-    search_fields = [ 'book__title', 'book__isbn'  ]
+    search_fields = [ 'book__name', 'book__isbn'  ]
     autocomplete_fields = [ 'reader', 'book' ]
     form = BorrowForm
     actions  = None
@@ -59,7 +59,7 @@ class BorrowAdmin(admin.ModelAdmin):
     def process_borrow_return(self, request, pk):
         borrow_item = Borrow.objects.filter(pk=pk).select_related('book');
         if borrow_item.exists():
-            self.message_user(request, f"{borrow_item.first().book.title} returned.", "SUCCESS")
+            self.message_user(request, f"{borrow_item.first().book.name} returned.", "SUCCESS")
             borrow_item.delete()
         else:
             self.message_user(request, "Item doesn't exist anymore.", "ERROR")

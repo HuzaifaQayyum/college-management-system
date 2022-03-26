@@ -34,17 +34,20 @@ class BookForm(forms.ModelForm):
 
         return self.cleaned_data.get('isbn')
 
+    def clean_name(self):
+        return self.cleaned_data.get('name').title()
+
 
     def clean(self):
         cleaned_data = super().clean()
-        if 'title' in self.changed_data or 'author' in self.changed_data:
-            book_already_exists = Book.objects.filter(title__iexact=cleaned_data['title']) \
+        if 'name' in self.changed_data or 'author' in self.changed_data:
+            book_already_exists = Book.objects.filter(name__iexact=cleaned_data['name']) \
                         .annotate(authors_count=models.Count('author')) \
                         .filter(authors_count=cleaned_data['author'].count()) \
                         .filter(author__in=cleaned_data['author']).exists()
                         
             if book_already_exists:
-                raise forms.ValidationError("Book with same title and same list of authors already exists.")
+                raise forms.ValidationError("Book with same name and same list of authors already exists.")
 
         return cleaned_data
         
