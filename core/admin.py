@@ -44,7 +44,7 @@ class StudentAdminWithQuizPerformance(management_admin.StudentAdmin):
 class QuizResultAdminWithDateFilter(quiz_admin.QuizResultAdmin):
 
     def get_list_filter(self, request):
-        return super().get_list_filter(request) + [  QuizMonthYearFilter ]
+        return [  QuizMonthYearFilter ] + super().get_list_filter(request)
 
 
 admin.site.unregister(library_model.Borrow)
