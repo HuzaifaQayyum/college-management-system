@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'library',
     'accounts',
     'pwa',
+    'management',
     'core',
     'quiz'
 ]

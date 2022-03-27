@@ -1,6 +1,6 @@
 ---
 
-- model: core.Student
+- model: management.Student
   fields:
     roll_no: 1
     name: John Smith

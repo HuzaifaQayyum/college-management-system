@@ -1,11 +1,11 @@
 ---
 
-- model: core.Subject
+- model: management.Subject
   fields:
     name: English
-- model: core.Subject
+- model: management.Subject
   fields:
     name: Math
-- model: core.Subject
+- model: management.Subject
   fields:
     name: Pak studies

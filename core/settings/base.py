@@ -87,8 +87,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'accounts.User'
-SUBJECT_MODEL = 'core.Subject'
-STUDENT_MODEL = 'core.Student'
+SUBJECT_MODEL = 'management.Subject'
+STUDENT_MODEL = 'management.Student'
 BORROWER_MODEL = STUDENT_MODEL
-COURSE_SUBJECT_MODEL = 'core.CourseSubject'
+COURSE_SUBJECT_MODEL = 'management.CourseSubject'
 CATEGORY_MODEL = 'categories.Category'

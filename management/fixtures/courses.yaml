@@ -1,6 +1,6 @@
 ---
 
-- model: core.Course
+- model: management.Course
   fields:
     name: ICS part 1
     subjects:

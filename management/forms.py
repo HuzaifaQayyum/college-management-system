@@ -1,7 +1,7 @@
 from django import forms
 from .models import Course, Student, Subject
 import re
-forms.models.BaseInlineFormSet
+
 
 class CourseForm(forms.ModelForm):
 
