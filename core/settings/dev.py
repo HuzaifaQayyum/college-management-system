@@ -17,15 +17,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_media_fixtures',
 
-    'modeladmin_reorder',
-    'categories',
-    'library',
-    'accounts',
-    'pwa',
-    'management',
-    'core',
-    'quiz'
-]
+] + CUSTOM_APPS
 
 
 MIDDLEWARE = [

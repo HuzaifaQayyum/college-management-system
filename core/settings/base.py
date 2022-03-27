@@ -19,6 +19,17 @@ from .modeladmin_reorder import *
 
 ROOT_URLCONF = 'core.urls'
 
+CUSTOM_APPS = [ 
+    'modeladmin_reorder',
+    'categories',
+    'library',
+    'accounts',
+    'pwa',
+    'management',
+    'core',
+    'quiz'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

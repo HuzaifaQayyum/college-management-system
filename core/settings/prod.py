@@ -22,15 +22,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'constance',
     'constance.backends.database',
-
-    'modeladmin_reorder',
-    'categories',
-    'library',
-    'accounts',
-    'pwa',
-    'core',
-    'quiz'
-]
+] + CUSTOM_APPS
 
 
 MIDDLEWARE = [
