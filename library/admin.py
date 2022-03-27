@@ -1,18 +1,30 @@
 from django.contrib import admin
-from django.db.models.expressions import F
+from django.db import models
 from django.http.response import HttpResponseRedirect
 from django.urls import path, reverse
 from library.forms import BookForm, BorrowForm, AuthorForm
 from .models import Book, Author, Borrow
 from django.utils.html import format_html
+from django.utils.http import urlencode
 
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'books' ]
     form = AuthorForm
     search_fields = [ 'name' ]
     
+    def books(self, author):
+        if author.book_count:
+            return format_html('<a href="{}">{}</a>', 
+                            reverse('admin:library_book_changelist') + '?' + urlencode({'author': author.id}), 
+                            author.book_count)
+
+        return author.book_count
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(book_count=models.Count('book'))
+
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
@@ -32,7 +44,7 @@ class BookAdmin(admin.ModelAdmin):
     def get_search_results(self, request, queryset, search_term):
         queryset, use_distinct =  super().get_search_results(request, queryset, search_term)
         if 'autocomplete' in request.path:
-            queryset =  queryset.filter(stock__gt=F('assigned'))
+            queryset =  queryset.filter(stock__gt=models.F('assigned'))
         return queryset, use_distinct
 
 
@@ -75,6 +87,6 @@ class BorrowAdmin(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, *args, **kwargs):
         
         if db_field.name == 'book':
-            kwargs['queryset'] = Book.objects.filter(stock__gt=F('assigned'))
+            kwargs['queryset'] = Book.objects.filter(stock__gt=models.F('assigned'))
         
         return super().formfield_for_foreignkey(db_field, request, *args, **kwargs)
