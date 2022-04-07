@@ -34,6 +34,7 @@ class SimpleTextInputFilter(admin.SimpleListFilter):
 class QuizMonthYearFilter(SimpleTextInputFilter):
     parameter_name = 'date'
     title = 'Quiz (Month Year)'
+    placeholder = 'example Mar 2022'
 
 
     def __init__(self, *args, **kwargs):

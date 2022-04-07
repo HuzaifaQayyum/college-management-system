@@ -5,6 +5,7 @@ from quiz import models as quiz_model, admin as quiz_admin
 from django.db.models.functions import Cast
 from django.db import models
 from datetime import datetime
+from admin_auto_filters.filters import AutocompleteFilterFactory
 from .filters import *
 
 
@@ -44,7 +45,7 @@ class StudentAdminWithQuizPerformance(management_admin.StudentAdmin):
 class QuizResultAdminWithDateFilter(quiz_admin.QuizResultAdmin):
 
     def get_list_filter(self, request):
-        return [  QuizMonthYearFilter ] + super().get_list_filter(request)
+        return super().get_list_filter() + [  QuizMonthYearFilter, AutocompleteFilterFactory('Course Subject', 'course_subject') ]
 
 
 admin.site.unregister(library_model.Borrow)

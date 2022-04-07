@@ -20,6 +20,8 @@ from .modeladmin_reorder import *
 ROOT_URLCONF = 'core.urls'
 
 CUSTOM_APPS = [ 
+    'admin_auto_filters',
+
     'modeladmin_reorder',
     'categories',
     'library',
