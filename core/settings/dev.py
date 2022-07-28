@@ -14,7 +14,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'constance',
     'constance.backends.database',
-    'debug_toolbar',
     'django_media_fixtures',
 
 ] + CUSTOM_APPS
@@ -22,7 +21,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -39,10 +37,3 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-INTERNAL_IPS = [
-    # ...
-    "127.0.0.1",
-    # ...
-]

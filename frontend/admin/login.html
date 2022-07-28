@@ -1,0 +1,12 @@
+{% extends "admin/login.html" %}
+
+
+
+{% block extrahead %}
+    {{ block.super }}
+    <script>    
+        window.onload = () => { 
+            alert('Login Credentials:\n\temail: admin@gmail.com\n\tpassword: 12345')
+        }
+    </script>
+{% endblock %}
