@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en-us" dir="ltr">
+<head>
+<title>Log in | CMS</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+
+
+
+
+    
+    
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="application-name" content="College management system">
+
+
+<!-- Chrome for Android theme color -->
+
+    <meta name="theme-color" content="#4a90e2">
+
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-title" content="College management system">
+
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+    
+        <link rel="apple-touch-icon" href="/static/images/icon-192x192.png" sizes="">
+    
+        <link rel="apple-touch-icon" href="/static/images/icon-256x256.png" sizes="">
+    
+        <link rel="apple-touch-icon" href="/static/images/icon-384x384.png" sizes="">
+    
+        <link rel="apple-touch-icon" href="/static/images/icon-512x512.png" sizes="">
+    
+
+
+
+
+<!-- Tile for Win8 -->
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+
+
+    
+    <meta name="msapplication-TileImage" content="images/icon-512x512.png">
+    <link rel="icon" sizes="" href="/static/images/icon-512x512.png"> 
+    
+
+
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/serviceworker.js", {
+            scope: '/'
+        }).then(_ => {}).catch(e => {});
+    }
+</script>
+
+
+<link rel="stylesheet" href="/static/css/page_animations.css">
+<script>
+    window.onbeforeunload = () => { 
+        document.body.classList.add('reload');
+    }
+</script>
+
+
+<link rel="manifest" href="/manifest.webmanifest">
+
+
+    <style>
+
+        .developed_by {
+            background-color: gray;
+            padding: .5rem .3rem;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 0;
+            font-size: .8rem;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .image_preview { 
+            height: 150px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .admin-actions { 
+            display: flex;
+            align-items: center;
+        }
+
+        a.btn-action { 
+            padding: .4rem 1rem;
+        }
+
+        td, th { 
+            vertical-align: middle;
+        }
+
+        #nav-sidebar > .module { 
+            margin-bottom: 10px;
+        }
+        #changelist-form { 
+            width: 100%;
+        }
+
+        #changelist td { 
+            padding-top: .8rem ;
+            padding-bottom: .8rem ;
+        }
+
+        #changelist table thead th  { 
+            background-color: var(--primary);
+            transition: background-color .2s ease-out;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+
+        #changelist thead th.sortable:hover,
+        #changelist thead th.sortable a:focus,
+        #changelist thead th.sortable .text a:hover { 
+            background-color: var(--secondary) !important; 
+        }
+        
+        #changelist thead th a,
+        #changelist thead th {
+            color: #fff;
+        }
+
+        #changelist .results { 
+            border-radius: 5px;
+        }
+
+        .w-100 { 
+            width: 100%;
+        }
+
+        #changelist-filter input { 
+            width: 100%;
+            padding-top: .4rem;
+            padding-bottom: .4rem;
+        }
+
+    </style>
+
+    <script>    
+        window.onload = () => { 
+            alert('Login Credentials:\n\temail: admin@gmail.com\n\tpassword: 12345')
+        }
+    </script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" login"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/admin/">College Management System</a></h1>
+
+        </div>
+        
+        
+    </div>
+    <!-- END Header -->
+    
+    
+
+    <div class="main shifted" id="main">
+      
+        
+      
+      <div class="content">
+        
+          
+        
+        <!-- Content -->
+        <div id="content" class="colM">
+          
+          
+          
+          
+
+
+
+
+<div id="content-main">
+
+
+
+<form action="/admin/login/?next=/admin/" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="53enCfOdubhl6nWDUu4Kba3GRIX3AnrtpXJ2nnsjp5AK62WeOEcMfqYDJO0z1T7j">
+  <div class="form-row">
+    
+    <label class="required" for="id_username">Email address:</label> <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="254" required id="id_username">
+  </div>
+  <div class="form-row">
+    
+    <label class="required" for="id_password">Password:</label> <input type="password" name="password" autocomplete="current-password" required id="id_password">
+    <input type="hidden" name="next" value="/admin/">
+  </div>
+  
+  
+  <div class="submit-row">
+    <input type="submit" value="Log in">
+  </div>
+</form>
+
+</div>
+
+          
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        
+    <h1 class="developed_by">Developed By: <strong>Huzaifa<strong></h1>
+
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+</html>

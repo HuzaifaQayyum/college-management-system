@@ -1,11 +1,11 @@
 ---
 - model: accounts.user
   fields:
-    password: pbkdf2_sha256$260000$LR4zJLyIZG4WHGXhfvGclT$axt8Tf7zL/mAKf3ATuMKMQ2wFNsniY7SDLuowEkT7SA=
+    password: pbkdf2_sha256$260000$bQoUkLeJXODMw91i9Di9fN$QnaLysqU4dwPZ6VjybKvb5W/3ZhwFGeM202R6t/y8r4=
     last_login:
     is_superuser: true
     full_name: Huzaifa Qayyum
-    email: huzaifaacf@gmail.com
+    email: huzaifa@admin.com
     is_staff: true
     is_active: true
     date_joined: '2022-03-26T15:16:33.475Z'

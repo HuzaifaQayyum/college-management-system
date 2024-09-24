@@ -81,7 +81,7 @@ class BorrowAdmin(admin.ModelAdmin):
     
     @admin.display(boolean=True, ordering='expiry')
     def do_fine(self, borrow):
-        return borrow.expiry > borrow.gave_time
+        return borrow.gave_time > borrow.expiry
 
 
     def formfield_for_foreignkey(self, db_field, request, *args, **kwargs):
