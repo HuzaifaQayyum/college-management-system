@@ -30,15 +30,3 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'modeladmin_reorder.middleware.ModelAdminReorder',
 ]
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'college-management-system'),
-        'HOST': os.environ.get('DB_HOST', 'db'),
-        'USER': os.environ.get('DB_USER', 'root'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'root'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-    }
-}
